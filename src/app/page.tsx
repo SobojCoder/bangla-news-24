@@ -3,6 +3,7 @@ import Marquee from "./components/homepage/Marquee";
 import { INews } from "@/type/news";
 import OtherNews from "./components/homepage/OtherNews";
 import { IOtherNews } from "@/type/otherNews";
+import MostReadNews from "./components/homepage/MostReadNews";
 
 export default async function Home() {
   const res = await fetch("http://news-api-v2.vercel.app/api/news/sections");
@@ -18,7 +19,7 @@ export default async function Home() {
     <div>
       <Marquee />
 
-      <div className="container mx-auto grid grid-cols-4 mt-5">
+      <div className="container mx-auto grid grid-cols-4 gap-5 mt-5">
         {/* main news */}
         <div className="col-span-3">
           <MainNews news={mainNews} />
@@ -41,7 +42,9 @@ export default async function Home() {
         </div>
         {/* letest news */}
 
-        <div></div>
+        <div>
+          <MostReadNews />
+        </div>
       </div>
     </div>
   );
