@@ -8,7 +8,6 @@ export interface INews {
   category: string
   type: string
   isLive: boolean
-  firstPublished: string | null
-  lastPublished: string | null
   source: string
 }
+
